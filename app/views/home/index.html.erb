@@ -1,0 +1,29 @@
+<h1>test map interactive</h1>
+<div class="container">
+  <div class="list">
+    <% @locations.each do |locations| %>
+      <div class="item js-marker" data-lat="<%= locations.latitude %>" data-lng=" <%= locations.longitude %>" data-title = "<%= locations.title %>">
+        <img src="https://via.placeholder.com/420x260" alt="">
+        <h4><%= locations.title %></h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, omnis sequi nesciunt adipisci pariatur totam suscipit doloribus quas, laborum voluptates recusandae maxime est ipsum deleniti saepe eos quasi! Quam, cupiditate.</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="map" id="map">
+  </div>
+
+</div>
+
+<script>
+  let map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer("//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+  maxZoom: 18,
+  }).addTo(map);
+
+  L.popup()
+  .setLatLng([51.505, -0.09])
+  .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+  .openOn(map);
+</script>
