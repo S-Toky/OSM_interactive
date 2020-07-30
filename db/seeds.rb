@@ -8,6 +8,16 @@
 
 Location.destroy_all
 
-12.times do
-  Location.create(longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, title: Faker::Movies::HarryPotter.character)
-end
+Location.create(longitude: 47.52576, latitude: -18.91009, title: Faker::Movies::HarryPotter.character)
+
+Location.create(longitude: 47.52544, latitude: -18.94768, title: Faker::Movies::HarryPotter.character)
+
+Location.create(longitude: 47.54771, latitude: -18.95358, title: Faker::Movies::HarryPotter.character)
+
+Location.create(longitude: 47.55077, latitude: -19.07171, title: Faker::Movies::HarryPotter.character)
+
+Location.create(longitude: 47.48545, latitude: -19.19660, title: Faker::Movies::HarryPotter.character)
+
+Location.create(longitude: 47.46069, latitude: -19.35322, title: Faker::Movies::HarryPotter.character)
+
+
